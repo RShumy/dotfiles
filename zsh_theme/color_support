@@ -1,0 +1,338 @@
+black=0 	
+maroon=1 	
+green=2 	
+olive=3 	
+navy=4 	
+purple=5 	
+teal=6 	
+silver=7 	
+grey=8 	
+red=9 	
+lime=10 	
+yellow=11 	
+blue=12 	
+fuchsia=13 	
+aqua=14 	
+white=15 	
+grey0=16 	
+navyblue=17 	
+darkblue=18 	
+darkblue2=19 	
+cobalt=20 	
+blue1=21 	
+darkgreen=22 	
+deepskyblue4=23 	
+deepskyblue4=24 	
+deepskyblue4=25 	
+dodgerblue3=26 	
+dodgerblue2=27 	
+green4=28 	
+springgreen4=29 	
+turquoise4=30 	
+deepskyblue3=31 	
+deepskyblue3=32 	
+dodgerblue1=33 	
+green3=34 	
+springgreen3=35 	
+darkcyan=36 	
+lightseagreen=37 	
+deepskyblue2=38 	
+deepskyblue1=39 	
+green3=40 	
+springgreen3=41 	
+springgreen2=42 	
+cyan3=43 	
+darkturquoise=44 	
+turquoise2=45 	
+green1=46 	
+springgreen2=47 	
+springgreen1=48 	
+mediumspringgreen=49 	
+cyan2=50 	
+cyan1=51 	
+darkred=52 	
+deeppink4=53 	
+purple4=54 	
+purple4a=55 	
+purple3=56 	
+blueviolet=57 	
+orange4=58 	
+grey37=59 	
+mediumpurple4=60 	
+slateblue3=61 	
+slateblue3=62 	
+royalblue1=63 	
+chartreuse4=64 	
+darkseagreen4=65 	
+paleturquoise4=66 	
+steelblue=67 	
+steelblue3=68 	
+cornflowerblue=69 	
+chartreuse3=70 	
+darkseagreen4a=71 	
+cadetblue=72 	
+cadetblue=73 	
+skyblue3=74 	
+steelblue1=75 	
+chartreuse3=76 	
+palegreen3=77 	
+seagreen3=78 	
+aquamarine3=79 	
+mediumturquoise=80 	
+steelblue1=81 	
+chartreuse2=82 	
+seagreen2=83 	
+seagreen1=84 	
+seagreen1=85 	
+aquamarine1=86 	
+darkslategray2=87 	
+darkred=88 	
+deeppink4a=89 	
+darkmagenta=90 	
+darkmagenta=91 	
+darkviolet=92 	
+purple5=93 	
+orange4=94 	
+lightpink4=95 	
+plum4=96 	
+mediumpurple3=97 	
+mediumpurple3=98 	
+slateblue1=99 	
+yellow4=100 	
+wheat4=101 	
+grey53=102 	
+lightslategrey=103 	
+mediumpurple=104 	
+lightslateblue=105 	
+yellow4=106 	
+darkolivegreen5=107 	
+darkseagreen=108 	
+lightskyblue3=109 	
+lightskyblue3=110 	
+skyblue2=111 	
+chartreuse2a=112 	
+darkolivegreen4=113 	
+palegreen3=114 	
+darkseagreen3=115 	
+darkslategray3=116 	
+skyblue1=117 	
+chartreuse1=118 	
+lightgreen=119 	
+lightgreen=120 	
+palegreen1=121 	
+aquamarine1=122 	
+darkslategray1=123 	
+red3=124 	
+deeppink4b=125 	
+mediumvioletred=126 	
+magenta3=127 	
+darkviolet=128 	
+purple6=129 	
+darkorange3=130 	
+indianred=131 	
+hotpink3=132 	
+mediumorchid3=133 	
+mediumorchid=134 	
+mediumpurple2=135 	
+darkgoldenrod=136 	
+lightsalmon3=137 	
+rosybrown=138 	
+grey63=139 	
+mediumpurple2=140 	
+mediumpurple1=141 	
+gold3=142 	
+darkkhaki=143 	
+navajowhite3=144 	
+grey69=145 	
+lightsteelblue3=146 	
+lightsteelblue=147 	
+yellow3=148 	
+darkolivegreen3a=149 	
+darkseagreen3a=150 	
+darkseagreen2=151 	
+lightcyan3=152 	
+lightskyblue1=153 	
+greenyellow=154 	
+darkolivegreen2=155 	
+palegreen1=156 	
+darkseagreen2=157 	
+darkseagreen1=158 	
+paleturquoise1=159 	
+red3=160 	
+deeppink3=161 	
+deeppink3a=162 	
+magenta3=163 	
+magenta3=164 	
+magenta2=165 	
+darkorange3=166 	
+indianred=167 	
+hotpink3=168 	
+hotpink2=169 	
+orchid=170 	
+mediumorchid1=171 	
+orange3=172 	
+lightsalmon3=173 	
+lightpink3=174 	
+pink3=175 	
+plum3=176 	
+violet=177 	
+gold3=178 	
+lightgoldenrod3=179 	
+tan=180 	
+mistyrose3=181 	
+thistle3=182 	
+plum2=183 	
+yellow3=184 	
+khaki3=185 	
+lightgoldenrod4=186 	
+lightyellow3=187 	
+grey84=188 	
+lightsteelblue1=189 	
+yellow2=190 	
+darkolivegreen1=191 	
+darkolivegreen1a=192 	
+darkseagreen1a=193 	
+honeydew2=194 	
+lightcyan1=195 	
+red1=196 	
+deeppink2=197 	
+deeppink1=198 	
+deeppink1a=199 	
+magenta2=200 	
+magenta1=201 	
+orangered1=202 	
+indianred1=203 	
+indianred1a=204 	
+hotpink=205 	
+hotpink=206 	
+mediumorchid1a=207 	
+darkorange=208 	
+salmon1=209 	
+lightcoral=210 	
+palevioletred1=211 	
+orchid2=212 	
+orchid1=213 	
+orange1=214 	
+sandybrown=215 	
+lightsalmon1=216 	
+lightpink1=217 	
+pink1=218 	
+plum1=219 	
+gold1=220 	
+lightgoldenrod2=221 	
+lightgoldenrod5=222 	
+navajowhite1=223 	
+mistyrose1=224 	
+thistle1=225 	
+yellow1=226 	
+lightgoldenrod1=227 	
+khaki1=228 	
+wheat1=229 	
+cornsilk1=230 	
+grey100=231 	
+grey3=232 	
+grey7=233 	
+grey11=234 	
+grey15=235 	
+grey19=236 	
+grey23=237 	
+grey27=238 	
+grey30=239 	
+grey35=240 	
+grey39=241 	
+grey42=242 	
+grey46=243 	
+grey50=244 	
+grey54=245 	
+grey58=246 	
+grey62=247 	
+grey66=248 	
+grey70=249 	
+grey74=250 	
+grey78=251 	
+grey82=252 	
+grey85=253 	
+grey89=254 	
+grey93=255 
+
+print_256_colors() {
+    for i in {0..255} 
+    do
+       formatted_n=$(printf "%03d" $i)
+       print -P -n "%B%F{$i}$formatted_n "
+       if [[ $((i + 1)) -le 16 && $(( (i + 1) % 8 )) -eq 0 ]] || [[ $((i + 1 - 16)) -ge 0 && $(( (i + 1 - 16) % 6 )) -eq 0 ]];
+            then print "\n"
+       fi
+    done
+}
+
+print_all_256_colors() {
+
+print -P "%B 
+%F{0}black=0                 %F{64}chartreuse4=64        %F{128}darkviolet=128           %F{192}darkolivegreen1a=192           
+%F{1}maroon=1                %F{65}darkseagreen4=65      %F{129}purple6=129              %F{193}darkseagreen1a=193             
+%F{2}green=2                 %F{66}paleturquoise4=66     %F{130}darkorange3=130          %F{194}honeydew2=194                 
+%F{3}olive=3                 %F{67}steelblue=67          %F{131}indianred=131            %F{195}lightcyan1=195                
+%F{4}navy=4                  %F{68}steelblue3=68         %F{132}hotpink3=132             %F{196}red1=196                  
+%F{5}purple=5                %F{69}cornflowerblue=69     %F{133}mediumorchid3=133        %F{197}deeppink2=197                 
+%F{6}teal=6                  %F{70}chartreuse3=70        %F{134}mediumorchid=134         %F{198}deeppink1=198             
+%F{7}silver=7                %F{71}darkseagreen4a=71     %F{135}mediumpurple2=135        %F{199}deeppink1a=199                 
+%F{8}grey=8                  %F{72}cadetblue=72          %F{136}darkgoldenrod=136        %F{200}magenta2=200              
+%F{9}red=9                   %F{73}cadetblue=73          %F{137}lightsalmon3=137         %F{201}magenta1=201              
+%F{10}lime=10                 %F{74}skyblue3=74           %F{138}rosybrown=138            %F{202}orangered1=202                
+%F{11}yellow=11               %F{75}steelblue1=75         %F{139}grey63=139               %F{203}indianred1=203                
+%F{12}blue=12                 %F{76}chartreuse3=76        %F{140}mediumpurple2=140        %F{204}indianred1a=204                
+%F{13}fuchsia=13              %F{77}palegreen3=77         %F{141}mediumpurple1=141        %F{205}hotpink=205                       
+%F{14}aqua=14                 %F{78}seagreen3=78          %F{142}gold3=142                %F{206}hotpink=206                   
+%F{15}white=15                %F{79}aquamarine3=79        %F{143}darkkhaki=143            %F{207}mediumorchid1a=207             
+%F{16}grey0=16                %F{80}mediumturquoise=80    %F{144}navajowhite3=144         %F{208}darkorange=208                
+%F{17}navyblue=17             %F{81}steelblue1=81         %F{145}grey69=145               %F{209}salmon1=209                       
+%F{18}darkblue=18             %F{82}chartreuse2=82        %F{146}lightsteelblue3=146      %F{210}lightcoral=210                    
+%F{19}blue3=19                %F{83}seagreen2=83          %F{147}lightsteelblue=147       %F{211}palevioletred1=211            
+%F{20}blue3=20                %F{84}seagreen1=84          %F{148}yellow3=148              %F{212}orchid2=212                   
+%F{21}blue1=21                %F{85}seagreen1=85          %F{149}darkolivegreen3a=149     %F{213}orchid1=213                   
+%F{22}darkgreen=22            %F{86}aquamarine1=86        %F{150}darkseagreen3a=150       %F{214}orange1=214                       
+%F{23}deepskyblue4=23         %F{87}darkslategray2=87     %F{151}darkseagreen2=151        %F{215}sandybrown=215                        
+%F{24}deepskyblue4=24         %F{88}darkred=88            %F{152}lightcyan3=152           %F{216}lightsalmon1=216                      
+%F{25}deepskyblue4=25         %F{89}deeppink4a=89         %F{153}lightskyblue1=153        %F{217}lightpink1=217                        
+%F{26}dodgerblue3=26          %F{90}darkmagenta=90        %F{154}greenyellow=154          %F{218}pink1=218                             
+%F{27}dodgerblue2=27          %F{91}darkmagenta=91        %F{155}darkolivegreen2=155      %F{219}plum1=219                             
+%F{28}green4=28               %F{92}darkviolet=92         %F{156}palegreen1=156           %F{220}gold1=220                     
+%F{29}springgreen4=29         %F{93}purple5=93            %F{157}darkseagreen2a=157       %F{221}lightgoldenrod2=221                
+%F{30}turquoise4=30           %F{94}orange4=94            %F{158}darkseagreen1=158        %F{222}lightgoldenrod5=222               
+%F{31}deepskyblue3=31         %F{95}lightpink4=95         %F{159}paleturquoise1=159       %F{223}navajowhite1=223                      
+%F{32}deepskyblue3=32         %F{96}plum4=96              %F{160}red3=160                 %F{224}mistyrose1=224                        
+%F{33}dodgerblue1=33          %F{97}mediumpurple3=97      %F{161}deeppink3=161            %F{225}thistle1=225                          
+%F{34}green3=34               %F{98}mediumpurple3=98      %F{162}deeppink3a=162           %F{226}yellow1=226                   
+%F{35}springgreen3=35         %F{99}slateblue1=99         %F{163}magenta3=163             %F{227}lightgoldenrod1=227                
+%F{36}darkcyan=36             %F{100}yellow4=100           %F{164}magenta3=164             %F{228}khaki1=228                        
+%F{37}lightseagreen=37        %F{101}wheat4=101            %F{165}magenta2=165             %F{229}wheat1=229                            
+%F{38}deepskyblue2=38         %F{102}grey53=102            %F{166}darkorange3=166          %F{230}cornsilk1=230                         
+%F{39}deepskyblue1=39         %F{103}lightslategrey=103    %F{167}indianred=167            %F{231}grey100=231                           
+%F{40}green3=40               %F{104}mediumpurple=104      %F{168}hotpink3=168             %F{232}grey3=232                     
+%F{41}springgreen3=41         %F{105}lightslateblue=105    %F{169}hotpink2=169             %F{233}grey7=233                          
+%F{42}springgreen2=42         %F{106}yellow4=106           %F{170}orchid=170               %F{234}grey11=234                            
+%F{43}cyan3=43                %F{107}darkolivegreen5=107   %F{171}mediumorchid1=171        %F{235}grey15=235                    
+%F{44}darkturquoise=44        %F{108}darkseagreen=108      %F{172}orange3=172              %F{236}grey19=236                         
+%F{45}turquoise2=45           %F{109}lightskyblue3=109     %F{173}lightsalmon3=173         %F{237}grey23=237                        
+%F{46}green1=46               %F{110}lightskyblue3=110     %F{174}lightpink3=174           %F{238}grey27=238                    
+%F{47}springgreen2=47         %F{111}skyblue2=111          %F{175}pink3=175                %F{239}grey30=239                         
+%F{48}springgreen1=48         %F{112}chartreuse2a=112      %F{176}plum3=176                %F{240}grey35=240                            
+%F{49}mediumspringgreen=49    %F{113}darkolivegreen4=113   %F{177}violet=177               %F{241}grey39=241                                
+%F{50}cyan2=50                %F{114}palegreen3=114        %F{178}gold3=178                %F{242}grey42=242                    
+%F{51}cyan1=51                %F{115}darkseagreen3=115     %F{179}lightgoldenrod3=179      %F{243}grey46=243                    
+%F{52}darkred=52              %F{116}darkslategray3=116    %F{180}tan=180                  %F{244}grey50=244                        
+%F{53}deeppink4=53            %F{117}skyblue1=117          %F{181}mistyrose3=181           %F{245}grey54=245                        
+%F{54}purple4=54              %F{118}chartreuse1=118       %F{182}thistle3=182             %F{246}grey58=246                        
+%F{55}purple4a=55             %F{119}lightgreen=119        %F{183}plum2=183                %F{247}grey62=247                        
+%F{56}purple3=56              %F{120}lightgreen=120        %F{184}yellow3=184b              %F{248}grey66=248                        
+%F{57}blueviolet=57           %F{121}palegreen1=121        %F{185}khaki3=185               %F{249}grey70=249                        
+%F{58}orange4=58              %F{122}aquamarine1=122       %F{186}lightgoldenrod4=186      %F{250}grey74=250                        
+%F{59}grey37=59               %F{123}darkslategray1=123    %F{187}lightyellow3=187         %F{251}grey78=251                    
+%F{60}mediumpurple4=60        %F{124}red3=124              %F{188}grey84=188               %F{252}grey82=252                         
+%F{61}slateblue3=61           %F{125}deeppink4b=125         %F{189}lightsteelblue1=189     %F{253}grey85=253                        
+%F{62}slateblue3=62           %F{126}mediumvioletred=126   %F{190}yellow2=190              %F{254}grey89=254                        
+%F{63}royalblue1=63           %F{127}magenta3=127          %F{191}darkolivegreen1=191      %F{255}grey93=255                        
+"
+print -P $full_reset
+}	

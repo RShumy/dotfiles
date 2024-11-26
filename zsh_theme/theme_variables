@@ -1,0 +1,44 @@
+export TRANSITION_TYPE="invs"
+# Array to store all type of segments, segments also have info that needs to display
+export SEGMENTS=("USER" "DIR" "TIME" "MACHINE" "GIT")
+export USER_C=045
+export USER_BKG=061
+export R_USER_C="red"
+export R_USER_BKG=016
+export USER_INF="%n"
+export DIR_C=154
+export DIR_BKG=090
+export R_DIR_C=154 
+export R_DIR_BKG=021
+export DIR_INF="%(6~.%-1~/…/%4~.%5~)"
+export MACHINE_C=083
+export MACHINE_BKG=130
+export R_MACHINE_C="red"
+export R_MACHINE_BKG=090
+export MACHINE_INF="%m"
+export GIT_C=234
+export GIT_BKG=214
+export R_GIT_C="red"
+export R_GIT_BKG=016
+export GIT_INF="vcs_info_msg_0_"
+# Git 
+# ST=staged, US=unstaged, UT=untracked files, 
+# F=formats, AF=action formats
+export GIT_ST_C=025
+export GIT_US_C=057
+export GIT_UT_C=089
+export GIT_BR_SYMB_C=233
+export TIME_C=031
+export TIME_BKG=054
+export R_TIME_C=$TIME_C
+export R_TIME_BKG=$TIME_BKG
+export TIME_INF="%T"
+# Array that contain all Symbols
+export SYMBOLS=("POINTER" "SHADES" "ARROW" "DIMOND" "DIMOND_S")
+export SHADES_START="\u2591\u2592\u2593"
+export SHADES_END="\u2593\u2592\u2591"
+export ARROW_START="\ue0b0"
+export ARROW_END="\ue0b2"
+export GIT_BR_SYMB="\ue702"
+export POINTER_START=$SHADES_START
+export POINTER_END=$SHADES_END

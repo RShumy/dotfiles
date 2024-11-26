@@ -1,0 +1,273 @@
+# ToDo: Transform this into a more dynamic aproach when switching to root
+# # Git sourcing
+# source /home/shumy/.git-prompt.sh
+source $HOME/zsh_theme/color_support   
+source $HOME/zsh_theme/theme_variables
+source $HOME/zsh_theme/theme_validations
+
+# Set-up for live clock
+setopt PROMPT_SUBST
+TMOUT=60
+TRAPALRM() {
+    zle reset-prompt
+}
+
+
+# Change the value of the variable in the theme_variables file
+set_var() {
+    local var_name=$1
+    local var_value=$2
+    # theme_variables file should be present in the same folder as this file
+    sudo sed -i -E "s/$var_name=[0-9A-Za-z\"]+/$var_name=$var_value/g" theme_variables
+    export $1=$2
+}
+
+time_type() {
+    case $1 in
+        "24") set_var TIME_INF "%T" 
+            ;;
+        "12") set_var TIME_INF "%t"
+            ;;
+    esac
+}
+
+# Foreground
+frg() {
+    echo "%{%F{$1}%}"
+}
+
+# Background
+bkg() {
+    echo "%{%K{$1}%}"
+}
+
+full_reset() {
+    echo '%b%f%k'
+}
+
+check_param_types() {
+    if ! is_number "$1" && is_number "$2" && [[ -z "$3" ]]; then
+        echo "W_N"
+    elif is_number "$1" && ! is_number "$2" && [[ -z "$3" ]]; then
+        echo "N_W"
+    elif ! is_number "$1" && ! is_number "$2" && [[ -z "$3" ]]; then
+        echo "W_W"
+    elif is_number "$1" && is_number "$2" && [[ -z "$3" ]]; then
+        echo "N_N"
+    elif is_number "$1" && is_number "$2" && is_number "$3"; then
+        echo "N_N_N"
+    elif ! is_number "$1" && is_number "$2" && is_number "$3"; then
+        echo "W_N_N"
+    elif is_number "$1" && ! is_number "$2" && is_number "$3"; then
+        echo "N_W_N"
+    elif is_number "$1" && is_number "$2" && ! is_number "$3"; then
+        echo "N_N_W"
+    elif is_number "$1" && ! is_number "$2" && ! is_number "$3"; then
+        echo "N_W_W"
+    elif ! is_number "$1" && is_number "$2" && ! is_number "$3"; then
+        echo "W_N_W"
+    elif ! is_number "$1" && ! is_number "$2" && is_number "$3"; then
+        echo "W_W_N"
+    elif ! is_number "$1" && ! is_number "$2" && ! is_number "$3"; then
+        echo "W_W_W"
+    else
+        echo "Other cases..."
+    fi
+}
+ 
+gr_frg() {
+    # Add validation for color group names
+    if segments_contain $1 ; then
+        local COLOR="${1}_C"     
+        local R_COLOR="R_${1}_C"
+        echo "%(#.$(frg ${(P)R_COLOR}).$(frg ${(P)COLOR}))"
+    elif [[ $1 =~ "invs" ]] && segments_contain $2 ; then
+        local COLOR="${2}_C"     
+        local R_COLOR="R_${2}_C"
+        echo "%(#.$(bkg ${(P)R_COLOR}).$(bkg ${(P)COLOR}))"
+    else
+        echo "%f"
+    fi
+}
+
+gr_bkg() {
+    # Add validation for color group names
+    if segments_contain $1 ; then
+        local BKG="${1}_BKG"     
+        local R_BKG="R_${1}_BKG"
+        echo "%(#.$(bkg ${(P)R_BKG}).$(bkg ${(P)BKG}))"
+    elif [[ $1 =~ "invs" ]] && segments_contain $2 ; then
+        local BKG="${2}_BKG"     
+        local R_BKG="R_${2}_BKG"
+        echo "%(#.$(frg ${(P)R_BKG}).$(frg ${(P)BKG}))"
+    else
+        echo "%f"
+    fi
+ 
+}
+
+gr_frg_bkg() {
+    if is_param_name $1 ; then
+        echo "$(gr_frg $1)$(gr_bkg $1)"
+    fi
+    if [[ $1 = "invs" ]] && is_param_name $2 ; then
+        echo "$(gr_frg $1 $2)$(gr_bkg $1 $2)"
+    fi
+}
+
+
+start_transition() {
+    if symbols_contain $2; then
+        local VAR_NAME="${2}_START"
+        local POINT_START="${(P)VAR_NAME}"
+    else
+        local POINT_START=$POINTER_START
+    fi
+    if segments_contain $1; then
+        if [[ $TRANSISITION_TYPE="invs" ]]; then
+            echo $(gr_bkg invs $1)${POINT_START}$(gr_bkg $1)$(gr_frg $1)
+        else
+            echo $(gr_frg $1)${POINT_START}$(gr_frg invs $1)$(gr_bkg invs $1)
+        fi
+    fi
+}
+
+end_transition() {
+    if symbols_contain $2; then
+        local VAR_NAME="${2}_END"
+        local POINT_END="${(P)VAR_NAME}"
+    else
+        local POINT_END=$POINTER_END
+    fi
+    if segments_contain $1; then
+        if [[ $TRANSISITION_TYPE="invs" ]]; then
+            echo "%k"$(gr_bkg invs $1)$POINT_END
+        else
+            echo "%k"$(gr_frg $1)$POINT_END
+        fi
+    fi
+}
+
+start_segment() {
+    if segments_contain $1 ; then 
+       echo "$(start_transition $1)"
+    else
+       echo "$(full_reset)"
+    fi
+}
+
+head_end() {
+    if [ -n "$1" ]; then 
+        local BKG="${1}_BKG"
+        local R_BKG="R_${1}_BKG"
+        echo "%(#.$(end_transition ${(P)R_BKG}).$(end_transition ${(P)BKG}))"
+    fi
+}
+
+root_option() {
+    echo "${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}"
+}
+
+segment_info() {
+    if segments_contain $1; then
+        local INF="${1}_INF"
+        echo "${(P)INF}"
+    fi
+}
+
+segment_options() {
+    if segments_contain $1; then 
+        local INF="$(segment_info $1)"
+        if [[ $1 = "GIT" ]]; then
+           local INF="${(P)INF}"
+        fi
+        local SEG_W_INF="$(start_segment $1)$INF"
+        case $2 in  
+        "") 
+            echo "$SEG_W_INF"
+        ;;
+        "part_of")
+            if segments_contain $3; then 
+                echo "$(gr_frg_bkg $3)$INF"
+            fi
+        ;;
+        "like")
+            if segments_contain $3; then 
+                echo "$(start_segment $3)$INF"
+            fi
+        ;;
+        "simple")
+            echo "$(gr_frg_bkg $1)$INF"
+        ;;
+        "simple_end")
+            echo "$(gr_frg_bkg $1) ${INF}$(end_transition $1)"
+        ;;
+        "end")
+            echo "${SEG_W_INF}$(end_transition $1)"
+        ;;
+        esac
+
+        else echo "$(font_color $1)"
+    fi
+}
+
+
+
+time_segment() {
+    echo $(segment_options TIME $1 $2)
+}
+
+user_segment() {
+    echo $(segment_options USER $1 $2) 
+}
+
+machine_segment() {
+    echo $(segment_options MACHINE $1 $2)
+}
+
+dir_segment() {
+    echo $(segment_options DIR $1 $2)
+}
+
+# Git Configuration, still at beginning 
+autoload -Uz compinit && compinit
+# setopt prompt_subst
+autoload -Uz vcs_info add-zsh-hook
+zstyle ':vcs_info:*' stagedstr "\u2705" 
+zstyle ':vcs_info:*' unstagedstr "\u2795" 
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:git*' actionformats "$(frg $GIT_BR_SYMB_C)${GIT_BR_SYMB} $(gr_frg GIT)%b %F{233}(%a)%f"
+zstyle ':vcs_info:git*' formats \ "$(frg $GIT_BR_SYMB_C)${GIT_BR_SYMB} $(gr_frg GIT)%b $(frg $GIT_ST_C)%c$(frg $GIT_US_C)%u$(frg $GIT_UT_C)%m%f"
+zstyle ':vcs_info:*' enable git 
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+
++vi-git-untracked() {
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+        git status --porcelain | grep -m 1 '^??' &>/dev/null
+    then
+        hook_com[misc]="\u2753"
+    else
+        hook_com[misc]=''
+  fi
+}
+
+add-zsh-hook precmd vcs_info
+
+git_segment() {
+    if [[ -n ${(P)GIT_INF} ]]; then
+        segment_options GIT $1 $2
+    fi
+}
+
+
+
+prompt_symbol=$(echo "\u2622")
+# prompt_symbol=㉿
+# Skull emoji for root terminal
+[ "$EUID" -eq 0 ] && prompt_symbol=💀
+
+# Desired Prompt so far
+Shumy_PROMPT=$'%B$(root_option)$(time_segment end)\n$(user_segment)%B'$prompt_symbol$'$(machine_segment part_of USER)$(dir_segment end)$(git_segment end)\n$(start_transition USER)$(end_transition USER ARROW)$(full_reset)'
+Back_up=$Shumy_PROMPT
+# Original Prompt
+# PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n'$prompt_symbol$'%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '

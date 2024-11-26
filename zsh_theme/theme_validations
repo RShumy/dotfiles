@@ -1,0 +1,21 @@
+is_256_color() {
+    (( $1 >= 0 && $1 < 256 ));
+}
+
+is_number() {
+    local nums_re='^[0-9]+$'
+    [[ $1 =~ $nums_re ]]
+}
+
+is_param_name() {
+    local param='^[A-Z_]+$'
+    [[ $1 =~ $param ]]
+}
+
+segments_contain() {
+    (( ${SEGMENTS[(Ie)$1]} ))
+}
+
+symbols_contain() {
+    (( ${SYMBOLS[(Ie)$1]} ))
+}
