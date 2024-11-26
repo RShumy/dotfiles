@@ -233,11 +233,11 @@ dir_segment() {
 autoload -Uz compinit && compinit
 # setopt prompt_subst
 autoload -Uz vcs_info add-zsh-hook
-zstyle ':vcs_info:*' stagedstr "\u2705" 
-zstyle ':vcs_info:*' unstagedstr "\u2795" 
+zstyle ':vcs_info:*' stagedstr "\uf067" 
+zstyle ':vcs_info:*' unstagedstr "\uf128" 
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git*' actionformats "$(frg $GIT_BR_SYMB_C)${GIT_BR_SYMB} $(gr_frg GIT)%b %F{233}(%a)%f"
-zstyle ':vcs_info:git*' formats \ "$(frg $GIT_BR_SYMB_C)${GIT_BR_SYMB} $(gr_frg GIT)%b $(frg $GIT_ST_C)%c$(frg $GIT_US_C)%u$(frg $GIT_UT_C)%m%f"
+zstyle ':vcs_info:git*' actionformats "$(frg $GIT_BR_SYMB_C)${GIT_BR_SYMB} $(gr_frg GIT)%b %F{233}(%a)%f "
+zstyle ':vcs_info:git*' formats \ "$(frg $GIT_BR_SYMB_C)${GIT_BR_SYMB} $(gr_frg GIT)%b $(frg $GIT_ST_C)%c$(frg $GIT_US_C)%u$(frg $GIT_UT_C)%m%f "
 zstyle ':vcs_info:*' enable git 
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
@@ -245,7 +245,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
         git status --porcelain | grep -m 1 '^??' &>/dev/null
     then
-        hook_com[misc]="\u2753"
+        hook_com[misc]="\uf010"
     else
         hook_com[misc]=''
   fi
