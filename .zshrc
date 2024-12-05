@@ -16,8 +16,6 @@ setopt promptsubst         # enable command substitution in prompt
 
 WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 
-
-
 # hide EOL sign ('%')
 PROMPT_EOL_MARK=""
 
@@ -289,3 +287,8 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ADD Github generated key to identities if github ssh key file is present in the .ssh folder
+if [ -f "$HOME/.ssh/github" ]; then
+    eval $(keychain --eval --quiet --agents ssh github)
+fi
