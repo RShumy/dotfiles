@@ -13,7 +13,7 @@ then
 	echo "Value of BPP: ${BPP}"
 	XSERVERBPP="$(grep 'xserverbpp=128' /etc/xrdp/xrdp.ini)"
 	echo "Value of XSERVERBPP: ${XSERVERBPP}"
-	XSTART_EXEC_LINE=$(echo "$(grep 'exec /bin/sh /etc/X11' /etc/xrdp/startwm.sh)") 
+	XSTART_EXEC_LINE=$(echo "$(grep -e '^exec /bin/sh /etc/X11' /etc/xrdp/startwm.sh)") 
 	echo "Value lines to comment: ${XSTART_EXEC_LINE}"
 	if [ -z "${PORT}" ]; then
 		echo "Changing port number to 3390 from 3389"
@@ -28,6 +28,8 @@ then
 	fi
 	if [ -n "$XSTART_EXEC_LINE" ]; then
 		sudo sed -i -r "s/(.+X11)/#\1/g" /etc/xrdp/startwm.sh
+        # Appending text into privileged file with sudo bash -c 'echo text >> privilegedfile'
+        sudo bash -c 'echo "startxfce4" >> /etc/xrdp/startwm.sh' 
 	fi
 
 fi
